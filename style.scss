@@ -359,19 +359,15 @@ $blue: #0376e2;
   width:940px;
   margin:0 auto;
   @media screen and (min-width: 768px) and (max-width: 1000px) {
-    background: blue;
     width:100%;
    }
   @media screen and (min-width: 601px) and (max-width: 768px) {
-    background: green;
     width:100%;
    }
   @media screen and (min-width: 481px) and (max-width: 600px) {
-    background: red;
     width:100%;
   }
   @media screen and (min-width: 321px) and (max-width: 480px) {
-    background: purple;
     width:100%;
   }
     @media screen and (max-width: 320px) {
@@ -390,6 +386,43 @@ h5,
 h6 {
   font-family: 'Radley', serif;
 }
+#mobile-header a {
+  display:none;
+  @media screen and (min-width: 321px) and (max-width: 480px) {
+    position: relative;
+    padding-left: 1.25em;
+    color:$black;
+    text-decoration: none;
+    display: block;
+    padding: 12px;
+    font-family: 'Oxygen', serif;
+    text-align: center;
+    font-size:16px;
+    background:#e2e2e2;
+  }            
+  @media screen and (max-width: 320px) {
+   position: relative;
+    padding-left: 1.25em;
+    color:$black;
+    text-decoration: none;
+    display: block;
+    padding: 12px;
+    font-family: 'Oxygen', serif;
+    text-align: center;
+    font-size:16px;
+    background:#e2e2e2;
+  }
+}
+#mobile-header a:before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  width: 25px;
+  height: 4px;
+  border-top: 14px double #b1b1b1;
+  border-bottom:5px solid #b1b1b1; 
+}
 
 /* =Header
 -------------------------------------------------------------- */
@@ -398,16 +431,27 @@ header#main-header {
   padding:45px 0 40px 0;
   #main-header-logo-container {
     float:left;
-    @media screen and (max-width: 768px) {
-        float:none;
+
+    @media screen and (min-width: 768px) and (max-width: 1000px) {
+        float:left;
+        margin-left:6%;
+    }    
+    @media screen and (min-width: 481px) and (max-width: 600px) {
+      float: none;
+    }
+    @media screen and (min-width: 321px) and (max-width: 480px) {
+      float: none;
     }
     @media screen and (max-width: 320px) {
         float:none;
     }
     h1 {
-      @media screen and (max-width: 768px) {
-        text-align: center;
+      @media screen and (min-width: 481px) and (max-width: 600px) {
+        text-align:center;
       }
+      @media screen and (min-width: 321px) and (max-width: 480px) {
+        text-align:center;
+      }            
       @media screen and (max-width: 320px) {
         text-align: center;
       }
@@ -422,8 +466,11 @@ header#main-header {
       color:white;
       font-family: 'Oxygen', serif;
       font-size:14px;
-      @media screen and (max-width: 768px) {
-        text-align: center;
+      @media screen and (min-width: 481px) and (max-width: 600px) {
+        text-align:center;
+      }
+      @media screen and (min-width: 321px) and (max-width: 480px) {
+        text-align:center;
       }
       @media screen and (max-width: 320px) {
         text-align: center;
@@ -451,17 +498,29 @@ header#main-header {
 ------------------------------------------------------------*/
 nav#main-menu {
   background:#e2e2e2;
+  @media screen and (min-width: 481px) and (max-width: 600px) {
+      text-align: center;
+  }
+  @media screen and (min-width: 321px) and (max-width: 480px) {
+    display:none;
+  }
+  @media screen and (max-width: 320px) {
+    display:none;
+  }
 }
 nav#main-menu ul {
   padding: 0;
   margin: 0;
   list-style: none;
-  @media screen and (max-width: 768px) {
-    display: inline-block;
-  }
 }
 nav#main-menu li {
   float: left;
+  @media screen and (min-width: 321px) and (max-width: 480px) {
+    float:none;
+  }
+  @media screen and (max-width: 320px) {
+    float:none;
+  }
 }
 nav#main-menu a {
   color: $black;
@@ -545,21 +604,32 @@ nav#main-menu li li li li.sfhover ul {
   left:auto;
 }
 
-.menu-primary-menu-container {
-  width:940px;
+#main-menu .menu {
+  width: 940px;
   margin:0 auto;
-   @media screen and (max-width: 768px) {
-      width:100%;
-      text-align:center;
-      margin-bottom:-5px;
+    @media screen and (min-width: 481px) and (max-width: 600px) {
+      width: auto;
+      display: inline-block;
+      margin-bottom:-6px;
     }
+   @media screen and (min-width: 768px) and (max-width: 1000px) {
+      margin-left:6%;
+      width:auto;
+    }
+  @media screen and (min-width: 321px) and (max-width: 480px) {
+    width:auto;
+  }
+  @media screen and (max-width: 320px) {
+    width:auto;
+  }
 }
+
 
 /* =Content
 -------------------------------------------------------------- */
 #container {
   padding:30px 0 35px 0;
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1000px) {
       padding:0;
       padding-bottom:35px;
   } 
@@ -568,14 +638,21 @@ nav#main-menu li li li li.sfhover ul {
     width: 540px;
     background:white;
     padding:45px 40px;
-      @media screen and (max-width: 768px) {
-        width: 54%;
-        padding: 6% 6%;
-      }
+    @media screen and (min-width: 481px) and (max-width: 600px) {
+      width: 88%;
+      padding: 6% 6%;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1000px) {
+      width: 54%;
+      padding: 6% 6%;
+    }
+    @media screen and (min-width: 321px) and (max-width: 480px) {
+      width: 88%;
+      padding: 6% 6%;
+    }
     @media screen and (max-width: 320px) {
-      width: 280px;
-      background: white;
-      padding: 35px 20px;
+      width: 88%;
+      padding: 6% 6%;
     }
     .entry-content {
       margin-bottom:40px;
@@ -596,6 +673,14 @@ nav#main-menu li li li li.sfhover ul {
           color:$blue;
         }
       }
+    }
+    @media screen and (min-width: 321px) and (max-width: 480px) {
+      h1.site-h1 {
+      display: none; }
+    }            
+    @media screen and (max-width: 320px) {
+     h1.site-h1 {
+      display: none; }
     }
     .post-meta-data {
       font-size:14px;
@@ -631,10 +716,18 @@ nav#main-menu li li li li.sfhover ul {
   width: 220px; 
   background:white;
   padding:40px;
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 768px) and (max-width: 1000px) {
         padding:0;
         width: 23%;
         padding:6% 4%;
+    }
+    @media screen and (min-width: 481px) and (max-width: 600px) {
+      width:88%;
+      padding:6% 6%;
+    }
+    @media screen and (min-width: 321px) and (max-width: 480px) {
+      width:88%;
+      padding:6% 6%;
     }
     @media screen and (max-width: 320px) {
         padding:0 6%;
@@ -644,6 +737,29 @@ nav#main-menu li li li li.sfhover ul {
     margin-bottom:35px;
     padding-bottom:20px;
     border-bottom:1px solid #f3f3f3;
+    @media screen and (min-width: 481px) and (max-width: 600px) {
+      width:45%;
+    }
+    @media screen and (max-width: 320px) {
+        padding:0 6%;
+        width: 88%;
+    }
+  }
+  @media screen and (min-width: 481px) and (max-width: 600px) {
+    .widget:nth-child(odd) {
+      float:left;
+    }
+     .widget:nth-child(even) {
+      float:right;
+    }
+  }
+   @media screen and (min-width: 321px) and (max-width: 480px) {
+    .widget:nth-child(odd) {
+      float:left;
+    }
+     .widget:nth-child(even) {
+      float:right;
+    }
   }
   .widget:last-child {
     border-bottom:none;
@@ -661,7 +777,7 @@ nav#main-menu li li li li.sfhover ul {
       list-style:none;
       a {
       color:$blue;
-        @media screen and (max-width: 768px) {
+        @media screen and (min-width: 768px) and (max-width: 1000px) {
           font-size:14px;
         }
         @media screen and (max-width: 320px) {
@@ -861,15 +977,14 @@ input[type="submit"]:active {
 footer#main-footer {
   background:#e2e2e2;
   padding-top:30px;
-    @media screen and (max-width: 768px) {
-     font-size:13px;
+    @media screen and (min-width: 768px) and (max-width: 1000px) {
+      font-size:13px;
     }
-    
-      @media screen and (max-width: 768px) {
-        .grid {
-          width:88%;
-        }
-      }
+    @media screen and (min-width: 768px) and (max-width: 1000px) {
+      .grid {
+      width:88%;
+    }
+}
   h2 {
     font-size:24px;
     color:$black;
@@ -879,7 +994,7 @@ footer#main-footer {
     margin-bottom:20px;
   }
  
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1000px) {
     .widget-container {
       width:30%;
     }
@@ -901,11 +1016,22 @@ footer#main-footer {
 footer#main-footer .footer-content {
   table-layout:fixed; 
   display:table;
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1000px) {
     padding:0 6%;
+  }
+  @media screen and (min-width: 481px) and (max-width: 600px) {
+    width: 88%;
+    padding:0 6%;    
+  } 
+  @media screen and (min-width: 321px) and (max-width: 480px) {
+    display:block;
+    width: 88%;
+    padding:0 6%;  
   }
   @media screen and (max-width: 320px) {
     display: block;
+    width: 88%;
+    padding:0 6%;  
   }
 }
 footer#main-footer .widget-container,
@@ -914,15 +1040,44 @@ footer#main-footer .spacer {
   word-wrap: break-word;
   vertical-align: top;
   width:100%;
-  @media screen and (max-width: 320px) {
+  @media screen and (min-width: 321px) and (max-width: 480px) {
     display: block;
   }
+  @media screen and (max-width: 320px) {
+    display: block;
+    padding:0 6%;
+    width: 88%;
+
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  footer#main-footer .widget-container {
+        width: 45%;
+        margin-right:5%;
+      }
+}
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  footer#main-footer .widget-container:nth-child(odd) {
+        float:left;
+      }
+  footer#main-footer .widget-container:nth-child(even) {
+        float:right;
+      }
 }
 footer#main-footer .spacer {
   width:20px;
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1000px) {
     width:5%;
   }
+  @media screen and (min-width: 481px) and (max-width: 600px) {
+    width: 25%;  
+  }
+  @media screen and (min-width: 321px) and (max-width: 480px) {
+    display: none;
+  }
+  @media screen and (max-width: 320px) {
+    display: none;
+  }   
 }
 #copyright {
   background:$black;
@@ -931,6 +1086,9 @@ footer#main-footer .spacer {
     font-size:12px;
     color:#f3f3f3;
     text-align: center;
+    @media screen and (max-width: 320px) {
+      font-size:10px;
+    } 
   }
 }
 

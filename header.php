@@ -25,6 +25,7 @@
 			</div>
 		</div><!-- #main-header-container -->
     </header>
+	<h1 id="mobile-header"><a id="nav-toggle" href="#"><?php if ( is_front_page() ) { echo 'Home'; } else { wp_title(''); } ?></a></h1>
     <nav id="main-menu" class="site-nav">
     	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</nav>
