@@ -12,6 +12,11 @@
 		}
 	}
 
-	$( "#nav-toggle" ).toggle();
+
+
+
+	$("h1#mobile-header").click(function(){
+	  $("nav#main-menu").toggle();
+	});
 
 });

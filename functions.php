@@ -2,9 +2,12 @@
 
 // Enqueue scripts
 function theme_scripts() {
+	wp_deregister_script( 'jquery' );       
+	wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', array(), null, false );
+	wp_enqueue_script( 'jquery' );
 	wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Oxygen|Radley:300,700' );
-	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array('jquery') );
+	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js' );
 	wp_register_script( 'hover', get_template_directory_uri() . '/js/jquery.hoverIntent.minified.js', array(), null, false );
 	wp_enqueue_script( 'hover' );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
