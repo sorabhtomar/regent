@@ -1,16 +1,16 @@
 <?php get_header(); ?>
 
-    <div id="container" class="clear grid">
-        <div id="content">
+    <div id="container" class="site-container grid">
+        <div id="content" class="site-content">
             <?php if ( have_posts() ) : ?>
                 <?php while ( have_posts() ) : the_post(); ?>
-                <div class="article">
-                    <h1><?php the_title(); ?></h1>                    
-                    <div class="entry">
-                        
+                <div class="article-content" >
+                    <h1 class="site-h1 single"><?php the_title(); ?></h1>                    
+                    <div class="entry-content">
+
                         <?php get_template_part( 'parts/postdata', 'index' ); ?>
 
-                    </div><!-- #entry -->
+                    </div><!-- .entry -->
                 </div><!-- .article -->
                 <?php comments_template(); ?>
                 <?php endwhile; ?>

@@ -3,9 +3,11 @@
 		<div class="widget-container">
 			<?php dynamic_sidebar( 'footer-left-widgets' ); ?>
 		</div>
+		<div class="spacer"></div>
 		<div class="widget-container">
 			<?php dynamic_sidebar( 'footer-center-widgets' ); ?>
 		</div>
+		<div class="spacer"></div>
 		<div class="widget-container">
 			<?php dynamic_sidebar( 'footer-right-widgets' ); ?>
 		</div>

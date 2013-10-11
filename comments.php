@@ -1,6 +1,7 @@
 <?php
 
 wp_list_comments( array(
+ 	'callback'          => 'regent_comment',
     'type'              => 'comment',
     'reply_text'        => 'Reply',
     'avatar_size'       => 62
