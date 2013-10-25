@@ -467,8 +467,9 @@ header#main-header {
           text-align: center; } }
   header#main-header #main-header-search-bar-container {
     float: right;
-    margin-top: 10px; }
-    header#main-header #main-header-search-bar-container input {
+    margin-top: 10px;
+    /* Search bar */ }
+    header#main-header #main-header-search-bar-container input[type="text"] {
       border-radius: 0;
       background: #2f2f2f;
       border-color: #525252;
@@ -478,6 +479,17 @@ header#main-header {
       width: 255px;
       padding-right: 30px;
       padding-left: 10px; }
+    header#main-header #main-header-search-bar-container input#searchsubmit {
+      width: 30px;
+      border-radius: 1px;
+      padding-right: 10px;
+      margin-left: -34px;
+      padding: 4px 6px 8px 6px;
+      border-left: none;
+      border-top: 1px solid #525252;
+      border-right: 1px solid #525252;
+      border-bottom: 1px solid #525252;
+      background: #2f2f2f url(images/search-ico.png) no-repeat 8px 5px; }
 
 /* suckerfish && Nav
 ------------------------------------------------------------*/
@@ -496,7 +508,31 @@ nav#main-menu {
 nav#main-menu ul {
   padding: 0;
   margin: 0;
-  list-style: none; }
+  list-style: none;
+  position: relative; }
+
+nav#main-menu ul .parent-li {
+  background: #1a68bd; }
+  nav#main-menu ul .parent-li a {
+    color: white; }
+
+nav#main-menu .sub-menu {
+  background: #1a68bd;
+  width: 200px; }
+  nav#main-menu .sub-menu li {
+    width: 200px;
+    float: left;
+    padding-right: 38px;
+    background: #1a68bd; }
+    nav#main-menu .sub-menu li a {
+      color: white;
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.1); }
+      nav#main-menu .sub-menu li a:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 19px 19px; }
 
 nav#main-menu li {
   float: left; }
@@ -515,7 +551,7 @@ nav#main-menu a {
   padding: 19px 19px; }
 
 nav#main-menu a:hover, nav#main-menu li.current-menu-item a {
-  background: #0376e2;
+  background-color: rgba(0, 0, 0, 0.2);
   color: white; }
 
 nav#main-menu ul ul {
@@ -525,11 +561,15 @@ nav#main-menu ul ul {
   left: -999em;
   -webkit-box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.1);
-  top: 85px; }
+  top: auto; }
 
-nav#main-menu ul ul ul {
-  top: auto;
-  margin-top: 10px; }
+.raquo {
+  text-align: right;
+  display: inline-block;
+  float: right;
+  font-size: 23px;
+  line-height: 19px;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2); }
 
 header nav#main-menu li li a {
   color: #3b3b3b;
@@ -555,18 +595,18 @@ nav#main-menu li li a:hover {
   color: white; }
 
 nav#main-menu li li.current_page_item > a {
-  background: #F8F8F8; }
+  background-color: rgba(0, 0, 0, 0.2); }
 
 nav#main-menu li li.current_page_item > a:hover {
-  background: #f8f8f8; }
+  background-color: rgba(0, 0, 0, 0.2); }
 
 nav#main-menu li:hover ul,
 nav#main-menu li.sfhover ul {
   opacity: 1;
   left: auto; }
 
-nav#main-menu li ul ul {
-  margin: -3px 0 0 145px; }
+nav#main-menu li ul.sub-menu ul {
+  margin: -62px 0 0 238px; }
 
 nav#main-menu li:hover ul ul,
 nav#main-menu li:hover ul ul ul,
@@ -606,6 +646,16 @@ nav#main-menu li li li li.sfhover ul {
   @media screen and (max-width: 320px) {
     #main-menu .menu {
       width: auto; } }
+
+#main-menu .sub-menu {
+  width: 940px;
+  margin: 0 auto; }
+  @media screen and (min-width: 321px) and (max-width: 480px) {
+    #main-menu .sub-menu {
+      display: none; } }
+  @media screen and (max-width: 320px) {
+    #main-menu .sub-menu {
+      display: none; } }
 
 /* =Content
 -------------------------------------------------------------- */
@@ -650,7 +700,7 @@ nav#main-menu li li li li.sfhover ul {
         text-decoration: none;
         font-size: 36px; }
         #container #content h1 a:hover {
-          color: #0376e2; }
+          color: #1a68bd; }
     @media screen and (min-width: 321px) and (max-width: 480px) {
       #container #content h1.site-h1 {
         display: none; } }
@@ -663,7 +713,7 @@ nav#main-menu li li li li.sfhover ul {
       text-transform: capitalize;
       margin-bottom: 20px; }
       #container #content .post-meta-data a {
-        color: #0376e2; }
+        color: #1a68bd; }
   #container .post-category-tags {
     font-size: 14px;
     color: #979797;
@@ -672,7 +722,7 @@ nav#main-menu li li li li.sfhover ul {
     border-top: 1px solid #f3f3f3;
     border-bottom: 1px solid #f3f3f3; }
     #container .post-category-tags a {
-      color: #0376e2; }
+      color: #1a68bd; }
   #container .logged-in-as {
     text-transform: capitalize; }
 
@@ -734,7 +784,7 @@ nav#main-menu li li li li.sfhover ul {
       margin-bottom: 17px;
       list-style: none; }
       #sidebar ul li a {
-        color: #0376e2; }
+        color: #1a68bd; }
         @media screen and (min-width: 768px) and (max-width: 1000px) {
           #sidebar ul li a {
             font-size: 14px; } }
@@ -775,7 +825,7 @@ cite.fn, cite.fn a {
   display: block;
   text-align: center;
   font-style: normal;
-  color: #0376e2;
+  color: #1a68bd;
   font-weight: bold;
   font-size: 14px;
   margin-top: 5px;
@@ -844,7 +894,7 @@ cite.fn a:hover {
   text-decoration: none; }
 
 .reply a:hover {
-  color: #0376e2; }
+  color: #1a68bd; }
 
 h3.leave-comment {
   font-size: 24px;
@@ -867,7 +917,7 @@ em.comment-awaiting-moderation {
 p.logged-in-as {
   font-size: 14px; }
   p.logged-in-as a {
-    color: #0376e2; }
+    color: #1a68bd; }
 
 p.comment-notes {
   font-size: 14px; }
@@ -895,7 +945,7 @@ p.comment-notes {
 button, html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  background: #0376e2;
+  background: #1a68bd;
   box-shadow: none;
   text-shadow: none;
   color: white;
@@ -912,7 +962,7 @@ input[type="submit"] {
 button:hover, html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  background: #0376e2;
+  background: #1a68bd;
   box-shadow: none;
   text-shadow: none;
   color: white;
@@ -956,7 +1006,7 @@ footer#main-footer {
       margin-bottom: 13px;
       list-style: none; }
       footer#main-footer ul li a {
-        color: #0376e2; }
+        color: #1a68bd; }
         @media screen and (max-width: 320px) {
           footer#main-footer ul li a {
             font-size: 16px; } }
