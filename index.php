@@ -5,7 +5,7 @@
             <?php if ( have_posts() ) : ?>
                 <?php while ( have_posts() ) : the_post(); ?>
                 <div class="article-content" >
-                    <h1 class="clear"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>                    
+                    <h1 class="site-h1"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>                    
                     <div class="entry-content">
 
                         <?php get_template_part( 'parts/postdata', 'index' ); ?>
